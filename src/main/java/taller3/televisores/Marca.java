@@ -4,13 +4,13 @@ public class Marca {
     
     private String nombre;
 
-    Marca(String marca){
+    public Marca(String marca){
         this.nombre = marca;
     }
     
     // cambiar  y ver nombre
-    public void setNombre(String marca){
-        this.nombre = marca;
+    public void setNombre(String nombre){
+        this.nombre = nombre;
     }
 
     public String getNombre(){
