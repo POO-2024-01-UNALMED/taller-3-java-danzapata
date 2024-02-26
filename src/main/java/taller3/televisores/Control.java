@@ -2,7 +2,7 @@ package taller3.televisores;
 
 public class Control{
 
-    public TV tv;
+    private TV tv;
 
     //enlazar
     public void enlazar(TV tv){
@@ -23,59 +23,59 @@ public class Control{
 
     // volumen y canal
     public void setCanal(int canal){
-        if (tv.estado==true){
+        if (tv.getEstado()==true){
             if (canal>=1 && canal<=120){
-                tv.canal = canal;
+                tv.setCanal(canal);
             }
         }
     }
 
     public void setVolumen(int volumen){
-        if (tv.estado==true){
+        if (tv.getEstado()==true){
             if (volumen>=0 && volumen<=7){
-                tv.volumen = volumen;
+                tv.setVolumen(volumen);
             }
         }
     }
 
     // apagado encendido
     public void turnOn(){
-        tv.estado = true;
+        tv.turnOn();
     }
 
     public void turnOff(){
-        tv.estado = false;
+        tv.turnOff();
     }
 
     //incremento canales en 1, desde el control
     public void canalUp(){
-        if (tv.estado==true){
-            if (tv.canal<=119 && tv.canal>=1){ 
-                tv.canal =tv.canal + 1;
+        if (tv.getEstado()==true){
+            if (tv.getCanal()<=119 && tv.getCanal()>=1){ 
+                tv.canalUp();
             }
         }
     }
 
     public void canalDown(){
-        if (tv.estado==true){
-            if (tv.canal<=120 && tv.canal>=2){ 
-                tv.canal =tv.canal - 1;
+        if (tv.getEstado()==true){
+            if (tv.getCanal()<=120 && tv.getCanal()>=2){ 
+                tv.canalDown();
             }
         }
     }
 
     public void volumenUp(){
-        if (tv.estado==true){
-            if (tv.volumen<=6 && tv.volumen>=0){ 
-                tv.volumen = tv.volumen + 1;
+        if (tv.getEstado()==true){
+            if (tv.getVolumen()<=6 && tv.getVolumen()>=0){ 
+                tv.volumenUp();
             }
         }
     }
 
     public void volumenDown(){
-        if (tv.estado==true){
-            if (tv.volumen<=7 && tv.volumen>=1){ 
-            tv.volumen =tv.volumen - 1;
+        if (tv.getEstado()==true){
+            if (tv.getVolumen()<=7 && tv.getVolumen()>=1){ 
+                tv.volumenDown();
             }
         }
     }
